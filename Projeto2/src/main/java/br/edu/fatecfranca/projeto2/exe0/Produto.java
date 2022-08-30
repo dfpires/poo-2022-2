@@ -7,7 +7,11 @@ package br.edu.fatecfranca.projeto2.exe0;
 // final indica que a classe não pode ser herdada
 public final class Produto {
 
-    // criar os atributos da classe, também chamados de variáveis da classe
+    // private permite definir uma variável com visibilidade privada
+    // isso faz com que a variável possa ser acessada diretamente
+    // apenas dentro da própria classes
+    // caso queiramos acessar esta variável de fora da classe, precisamos
+    // utilizar os getters e setters
     private int qtde;
     private double preco;
     private String nome;
@@ -57,18 +61,18 @@ public final class Produto {
     }
     
     public void vender(int x){
-        if (x <= this.qtde){
-            this.qtde += x;
-        }
+        this.setQtde(this.qtde - x);
     }
+    
     public void subir(double x){
         this.preco += x;
     }
+    
     public void descer(double x){
-        if ( x <= this.preco){
-            this.preco -= x;
-        }
+        this.setPreco(this.preco - x);
+        
     }
+    
     public void mostrar(){
         System.out.println("Nome " + this.nome + " Qtde " + this.qtde +
                 " Preço " + this.preco);
