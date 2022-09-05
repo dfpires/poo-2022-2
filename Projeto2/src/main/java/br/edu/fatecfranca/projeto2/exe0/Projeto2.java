@@ -13,7 +13,7 @@ public class Projeto2 {
        System.out.println(" Preço: " + prod1.getPreco());
        
        Produto prod2 = new Produto("placa de vídeo", -1, -890.00);
-       
+       prod2.mostrar();
       
        
     }
