@@ -5,6 +5,8 @@
 
 package br.edu.fatecfranca.projeto3;
 
+import java.util.Date;
+
 /**
  *
  * @author Daniel
@@ -12,6 +14,10 @@ package br.edu.fatecfranca.projeto3;
 public class Projeto3 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+     
+        Aluno objAluno = new Aluno(123, "Zé");
+        Disciplina objDisciplina = new Disciplina(1, "POO");
+        Cursa obj = new Cursa(100, new Date(), objAluno, objDisciplina);
+        System.out.println(obj.toString());
     }
 }

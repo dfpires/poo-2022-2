@@ -29,6 +29,11 @@ public final class Aluno {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    @Override
+    public String toString() {
+        return "Aluno{" + "ra=" + ra + ", nome=" + nome + '}';
+    }
     
     
 }
