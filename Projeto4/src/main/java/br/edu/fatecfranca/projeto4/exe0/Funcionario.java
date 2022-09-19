@@ -9,7 +9,8 @@ package br.edu.fatecfranca.projeto4.exe0;
  * @author danielfacciolo
  */
 public class Funcionario {
-    
+    // variáveis da superclasse devem ser com visilidade protected para permitir
+    // que as subclasses herdem estas
     protected int codigo;
     protected String nome, cpf;
     protected float salario, cargaHoraria;
@@ -72,6 +73,8 @@ public class Funcionario {
                 ", cpf=" + cpf + ", salario=" + salario + ", cargaHoraria=" + cargaHoraria + '}';
     }
     
-    
+    public float calculaSalario(){
+        return this.salario;
+    }
     
 }
