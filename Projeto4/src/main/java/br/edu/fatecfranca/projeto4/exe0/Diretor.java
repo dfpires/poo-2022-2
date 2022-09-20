@@ -1,5 +1,7 @@
 package br.edu.fatecfranca.projeto4.exe0;
 
+import javax.swing.JOptionPane;
+
 public class Diretor extends Funcionario {
     
     private String partLucros;
@@ -26,5 +28,12 @@ public class Diretor extends Funcionario {
         return "Diretor{" + "partLucros=" + partLucros + super.toString() + '}';
     }
     
-    
+    @Override
+    public float calculaSalario(){
+        String lucro = JOptionPane.showInputDialog("Informe o lucro da empresa");
+        // vamos converter String para float
+        float auxParLucro = Float.parseFloat(this.partLucros);
+        float auxLucro = Float.parseFloat(lucro);
+        return this.salario + ((auxLucro * auxParLucro) / 100);
+    }   
 }
