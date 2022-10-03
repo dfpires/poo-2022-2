@@ -8,7 +8,11 @@ package br.edu.fatecfranca.projeto4.exe0;
  *
  * @author danielfacciolo
  */
-public class Funcionario {
+
+// classe abstrata e portanto não pode ser instanciada
+// ela serve de modelo para as classes filhas, promovendo reutilização de código
+// ela pode ter métodos abstratos
+public abstract class Funcionario {
     // variáveis da superclasse devem ser com visilidade protected para permitir
     // que as subclasses herdem estas
     protected int codigo;
@@ -73,8 +77,8 @@ public class Funcionario {
                 ", cpf=" + cpf + ", salario=" + salario + ", cargaHoraria=" + cargaHoraria + '}';
     }
     
-    public float calculaSalario(){
-        return this.salario;
-    }
+    // método abstrato
+    // as classes filhas são obrigadas a implementar este método
+    public abstract float calculaSalario(); 
     
 }

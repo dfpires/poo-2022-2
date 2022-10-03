@@ -27,13 +27,17 @@ public class Diretor extends Funcionario {
     public String toString() {
         return "Diretor{" + "partLucros=" + partLucros + super.toString() + '}';
     }
-    
+
     @Override
-    public float calculaSalario(){
-        String lucro = JOptionPane.showInputDialog("Informe o lucro da empresa");
-        // vamos converter String para float
-        float auxParLucro = Float.parseFloat(this.partLucros);
-        float auxLucro = Float.parseFloat(lucro);
-        return this.salario + ((auxLucro * auxParLucro) / 100);
-    }   
+    public float calculaSalario() {
+        
+        String lucro = JOptionPane.showInputDialog("Qual o lucro da empresa");
+        float lucrof = Float.parseFloat(lucro);
+        float partf = Float.parseFloat(this.partLucros);
+        return this.salario + ((lucrof * partf) / 100);
+        
+        
+    }
+    
+    
 }
