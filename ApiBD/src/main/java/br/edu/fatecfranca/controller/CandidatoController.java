@@ -2,7 +2,10 @@ package br.edu.fatecfranca.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +19,7 @@ public class CandidatoController {
 	// Java Spring tem como principal característica 
 	// a injeção de dependência, que permite que um objeto
 	// possa executar métodos sem ser instanciado
+	@Autowired
 	CandidatoRepository injecao;
 	
 	// consulta
@@ -25,6 +29,12 @@ public class CandidatoController {
 	}
 	
 	// inserção
+	@PostMapping
+	public CandidatoEntity addCandidato(@RequestBody CandidatoEntity candidato) {
+		// insere no banco e retorna o objeto criado
+		return injecao.save(candidato); // faz o insert
+	}
+	
 	// remoção
 	// atualização
 }
