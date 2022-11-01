@@ -3,8 +3,11 @@ package br.edu.fatecfranca.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,5 +39,19 @@ public class CandidatoController {
 	}
 	
 	// remoção
+	@DeleteMapping("/{id}")
+	public String removeCandidato(@PathVariable Long id) {
+		
+		injecao.deleteById(id); // comando sql delete ... 
+		
+		return "Remoção realizada com sucesso";
+	}
+	
 	// atualização
+	@PutMapping
+	public CandidatoEntity updateCandidato(@RequestBody 
+			CandidatoEntity candidato) {
+		
+		return injecao.save(candidato);
+	}
 }
