@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Projeto da disciplina de POO </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="candidato.js"></script> 
+   </head>
+  <body onLoad="consultaCandidatos()">
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
@@ -54,13 +56,25 @@
                     <label for="nota" class="form-label"> Nota </label>
                     <input type="number" class="form-control" id="nota"/> 
                 </div>
-                <button type="submit" class="btn btn-success"> Enviar </button> 
+                <button onClick="cadastraCandidato()" type="button" class="btn btn-success"> Enviar </button> 
             </form>
         </div>
     </section>
     <section id="consulta">
         <div class="container">
-            Lista de Candidatos 
+            Lista de Candidatos
+            <table class="table">
+                <theader>
+                    <tr>
+                        <th> Nome </th> <th> Partido </th> 
+                        <th> Idade </th> <th> Nota</th>
+                        <th> Remover </th> <th> Atualizar </th> 
+                    </tr>
+                </theader>
+                <tbody id="conteudoTabela">
+                    <!-- aqui virão os dados do banco de dados -->
+                </tbody>
+            </table> 
         </div>
     </section>
     <footer>
