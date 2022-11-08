@@ -3,6 +3,7 @@ package br.edu.fatecfranca.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,12 +28,15 @@ public class CandidatoController {
 	
 	// consulta
 	@GetMapping
+	@CrossOrigin("*")
 	public List<CandidatoEntity> getCandidatos(){
 		 return injecao.findAll(); // faz o select
 	}
 	
 	// inserção
 	@PostMapping
+	// CORS - Cross Origin Resource Sharing
+	@CrossOrigin("*")
 	public CandidatoEntity addCandidato(@RequestBody CandidatoEntity candidato) {
 		// insere no banco e retorna o objeto criado
 		return injecao.save(candidato); // faz o insert
@@ -40,6 +44,7 @@ public class CandidatoController {
 	
 	// remoção
 	@DeleteMapping("/{id}")
+	@CrossOrigin("*")
 	public String removeCandidato(@PathVariable Long id) {
 		
 		injecao.deleteById(id); // comando sql delete ... 
@@ -49,6 +54,7 @@ public class CandidatoController {
 	
 	// atualização
 	@PutMapping
+	@CrossOrigin("*")
 	public CandidatoEntity updateCandidato(@RequestBody 
 			CandidatoEntity candidato) {
 		
